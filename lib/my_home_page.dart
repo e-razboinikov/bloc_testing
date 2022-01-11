@@ -13,6 +13,12 @@ class _MyHomePageState extends State<MyHomePage> {
   final _bloc = ColorBloc();
 
   @override
+  void dispose() {
+    _bloc.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
