@@ -1,9 +1,9 @@
-import 'package:bloc_test/bloc/user_event.dart';
-import 'package:bloc_test/bloc/user_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../services/user_repository.dart';
+import '../bloc/user_event.dart';
+import '../bloc/user_state.dart';
 import '../models/user.dart';
+import '../services/user_repository.dart';
 
 class UserBloc extends Bloc<UserEvent, UserState> {
   final UsersRepository usersRepository;
@@ -11,7 +11,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
   UserBloc({required this.usersRepository});
 
   @override
-  get initialState => UserEmptyState();
+  UserState get initialState => UserEmptyState();
 
   @override
   Stream<UserState> mapEventToState(UserEvent event) async* {

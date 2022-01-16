@@ -1,10 +1,10 @@
-import 'package:bloc_test/services/user_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../bloc/user_bloc.dart';
+import '../services/user_repository.dart';
 import '../widgets/action_buttons.dart';
 import '../widgets/user_list.dart';
-import '../bloc/user_bloc.dart';
 
 class HomePage extends StatelessWidget {
   final usersRepository = UsersRepository();
