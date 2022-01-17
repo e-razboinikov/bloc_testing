@@ -30,44 +30,40 @@ class UserList extends StatelessWidget {
             itemBuilder: (ctx, index) => Container(
               color:
                   index % 2 == 0 ? Colors.white : Colors.pink.withOpacity(0.5),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Text(
-                    'ID: ${state.loadedUser[index].id}',
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+              child: ListTile(
+                leading: Text(
+                  'ID: ${state.loadedUser[index].id}',
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
                   ),
-                  Column(
-                    children: [
-                      Text(
-                        state.loadedUser[index].name,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
+                ),
+                title: Column(
+                  children: [
+                    Text(
+                      state.loadedUser[index].name,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            state.loadedUser[index].email,
-                            style: const TextStyle(
-                              fontStyle: FontStyle.italic,
-                            ),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          state.loadedUser[index].email,
+                          style: const TextStyle(
+                            fontStyle: FontStyle.italic,
                           ),
-                          Text(
-                            state.loadedUser[index].phone,
-                            style: const TextStyle(
-                              fontStyle: FontStyle.italic,
-                            ),
+                        ),
+                        Text(
+                          state.loadedUser[index].phone,
+                          style: const TextStyle(
+                            fontStyle: FontStyle.italic,
                           ),
-                        ],
-                      )
-                    ],
-                  ),
-                ],
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           );
@@ -76,14 +72,16 @@ class UserList extends StatelessWidget {
         if (state is UserErrorState) {
           return const Center(
             child: Text(
-              'Error fetching users',
+              'ERROR',
               style: TextStyle(fontSize: 20.0),
             ),
           );
         }
+
         return const Center(
-          child: Text('Error'),
-        );
+            child: Text(
+          'Default case',
+        ));
       },
     );
   }
