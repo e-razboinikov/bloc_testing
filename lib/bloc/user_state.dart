@@ -1,3 +1,5 @@
+part of 'user_bloc.dart';
+
 abstract class UserState {}
 
 class UserEmptyState extends UserState {}
