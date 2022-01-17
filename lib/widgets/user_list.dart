@@ -18,11 +18,13 @@ class UserList extends StatelessWidget {
             ),
           );
         }
+
         if (state is UserLoadingState) {
           return const Center(
             child: CircularProgressIndicator(),
           );
         }
+
         if (state is UserLoadedState) {
           return ListView.builder(
             itemCount: state.loadedUser.length,
@@ -71,16 +73,15 @@ class UserList extends StatelessWidget {
         if (state is UserErrorState) {
           return const Center(
             child: Text(
-              'ERROR',
+              'Error fetching data',
               style: TextStyle(fontSize: 20.0),
             ),
           );
         }
 
         return const Center(
-            child: Text(
-          'Default case',
-        ));
+          child: SizedBox(),
+        );
       },
     );
   }
