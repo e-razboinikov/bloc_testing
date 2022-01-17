@@ -11,7 +11,7 @@ class UserApiProvider {
     final response = await http.get(Uri.parse(_url));
 
     if (response.statusCode == 200) {
-      final List<Map<String, dynamic>> decodedJson = json.decode(response.body);
+      final List<dynamic> decodedJson = json.decode(response.body);
       final List<User> users =
           decodedJson.map((json) => User.fromJson(json)).toList();
       return users;
