@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter BLoC',
+      title: 'Flutter BLoC test',
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
